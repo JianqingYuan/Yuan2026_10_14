@@ -118,33 +118,47 @@ figures. To redraw only Figures 4, 6 and 7, enter this command in Command Prompt
 python main.py --mode paper --figures 4 6 7
 ```
 
-**B. Try a small real calculation: `MODE = "demo"`**
+**B. Run a small calculation and generate demonstration figures: `MODE = "demo"`**
 
-For a first trial, change the corresponding lines in `settings.py` to:
+To generate demonstrations corresponding to all 13 manuscript figures, change
+the corresponding lines in `settings.py` to:
 
 ```python
 MODE = "demo"
-SUITE = "baseline"
+SUITE = "all"
 FIT_PIPELINE = "paper"
 WORKERS = 1
 CORES_PER_FIT = 1
 ```
 
-Save the file, return to Command Prompt, and run `python main.py` again.
+Save the file, return to Command Prompt, type `python main.py`, and press Enter.
 
-This selects two datasets from the basic experiments—one noiseless and one noisy—and fits both with ER and
-RN: **four model fits**. Observation points and fitting ranges are retained,
-but DE/TRF budgets are deliberately small.
+This small panel-covering plan contains **21 datasets**, each fitted by both
+ER and RN, giving **42 model fits**:
 
-When final plotting is reached, the output includes a best-fit overview,
-`new_run_summary.pdf/.png`, and up to two `demo_timeseries_*.pdf/.png` figures
-showing the x(t) and y(t) observations and fitted curves. Each time-series
-figure requires a usable fit for that dataset. This is not a reduced version
-of all 13 manuscript figures; fits may not have converged and cannot support
-the paper's statistical conclusions. Selecting `SUITE = "all"` instead tries
-two datasets from each of the three suites, giving 12 model fits in total.
-Because full observation times are retained, especially for the highly eccentric
-S301 orbits, an `all` demo can still take tens of minutes. Try `baseline` first.
+- Basic experiments: `q = 0.1, 0.5, 1`, each at the smallest periapsis; one noiseless dataset and the first realization at each endpoint noise level (0 and 9), giving **18 fits**.
+- Strong-field high charges: both charges, each at the smallest periapsis with the same three dataset choices, giving **12 fits**.
+- S301: two orbits and three charges, each with one noisy realization at 30 microarcseconds, giving **12 fits**; no additional S301 noiseless fits.
+
+Observation points, bounds and seeds remain those of the corresponding original
+experiments. Each DE/TRF fit retains the existing small demonstration budget.
+When final plotting is reached, `output/demo_<timestamp>/figures/` contains
+**13 numbered demonstration figures**, `demo_figure_01_...` through
+`demo_figure_13_...`, corresponding to manuscript Figures 1–13:
+**13 PDFs and 13 PNGs** in total.
+
+- Figures 1–5 redraw bundled geometric curves, without new integration or any historical fitted results.
+- Figures 6–13 use the same types of plot as the paper, but show only this demo's results: reduced grids and individual noise-realization points, without large-sample statistical intervals.
+
+The `new_run_summary.pdf/.png` overview and per-dataset `demo_timeseries_*.pdf/.png`
+plots are also retained. Unavailable results remain explicitly missing; paper
+fits are never used to fill them. **These demonstrate computation and plotting;
+they do not guarantee convergence or support the paper's statistical conclusions.**
+`demo_plot_data.json` records the plotted values and their sources.
+Highly eccentric S301 orbits can still be slow: 42 fits are not guaranteed to
+finish in a few minutes. CPU settings affect parallel speed only.
+For a basic-only trial, use `SUITE = "baseline"` (18 fits); uncomputed panels in
+Figures 12 and 13 will then be marked as missing.
 
 `DEMO_FINISHED_WITH_ITERATION_LIMITS` means the small demonstration budget was
 used up, not that the fits converged. An error or `FAILED` is different and
