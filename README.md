@@ -7,8 +7,12 @@ and entangled relativity*.
 
 ## Start here
 
-The program is in `Yuan2026_10_14` (distributed on GitHub as
-`Yuan2026_10_14.zip`). Extract the ZIP if needed. With Python 3.12 installed,
+Download the package you need from the **Assets** section of the [GitHub release](https://github.com/JianqingYuan/Yuan2026_10_14/releases) and extract it.
+
+- `Yuan2026_11_07_general_spherical_v9_4_B4.zip` contains the B4 orbital fitting code. Start with `README.md` inside the archive. The B4 fitting guide is `README_NEXTGEN.zh-CN.md` (in Chinese).
+- `periapsis-profile-0.1.1.zip` computes the uncertainty in the pericentre advance per radial period from an existing fit. It accepts a B4 fit or your own fit and can be installed independently. Its `README.md` includes a worked RN example (case 36).
+
+To reproduce the original paper figures, use the paper entry point in the B4 directory. With Python 3.12 installed,
 open Command Prompt in the folder containing `main.py` and `requirements.txt`,
 then run:
 
@@ -20,7 +24,7 @@ python main.py
 ```
 
 The default redraws 13 paper figures from saved data, without fitting.
-Open `Yuan2026_10_14/output/paper_<timestamp>/figures/` for the PDFs and PNGs.
+Open `Yuan2026_11_07_general_spherical_v9_4_B4/output/paper_<timestamp>/figures/` for the PDFs and PNGs.
 The saved data include the reviewed four S301 pairs and 77 extreme ER
 corrections used in revised Figures 13 and 12; other archived values are retained.
 
@@ -32,7 +36,7 @@ is a separate, substantially larger calculation.
 
 ## Details and evidence
 
-After extraction, open these files inside `Yuan2026_10_14`:
+Open these files inside `Yuan2026_11_07_general_spherical_v9_4_B4`:
 
 - `README.md`: installation, modes and optional advanced settings.
 - `AUDIT_STATUS.md`: audit scope and limitations.
@@ -40,7 +44,7 @@ After extraction, open these files inside `Yuan2026_10_14`:
 
 Separate attachment:
 
-- [Original selected-endpoint evidence](audit_evidence_20261015.zip)
+- [Original selected-endpoint evidence](https://github.com/JianqingYuan/Yuan2026_10_14/blob/55964c9a82394d44472c3e39c46ee89943c786bc/audit_evidence_20261015.zip)
 
 The evidence ZIP is a separate audit record, not another copy of the program.
 The targeted corrections and software checks do not prove global optimality
