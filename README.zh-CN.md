@@ -5,14 +5,16 @@
 论文 *Nearly indistinguishable: charged black holes in general and entangled
 relativity* 的配套代码。
 
-## 从这里开始
+如需使用论文当时发布的版本，请下载 [Yuan2026_10_14.zip](https://github.com/JianqingYuan/Yuan2026_10_14/blob/55964c9a82394d44472c3e39c46ee89943c786bc/Yuan2026_10_14.zip)，并参照[当时的运行说明](https://github.com/JianqingYuan/Yuan2026_10_14/blob/55964c9a82394d44472c3e39c46ee89943c786bc/README.zh-CN.md)。
+
+## 当前版本
 
 在 [GitHub 发布页](https://github.com/JianqingYuan/Yuan2026_10_14/releases) 的 **Assets** 下下载所需的压缩包并解压。
 
 - `Yuan2026_11_07_general_spherical_v9_4_B4.zip` 是 B4 轨道拟合程序。使用说明见包内的 `README.zh-CN.md`，B4 拟合指南见 `README_NEXTGEN.zh-CN.md`。
 - `periapsis-profile-0.1.1.zip` 用已有拟合计算每个径向周期的近心点进动误差。可读入 B4 的拟合结果，也可使用自己的拟合，支持独立安装。包内 `README.md` 以第 36 组 RN 拟合为例说明用法。
 
-如要重画原论文的图，请使用 B4 目录里的论文入口。安装 Python 3.12 后，
+如要用 B4 重画论文的图，请使用 B4 目录里的论文入口。安装 Python 3.12 后，
 进入同时包含 `main.py` 和 `requirements.txt` 的文件夹，
 在地址栏输入 `cmd`，打开命令窗口，依次运行：
 

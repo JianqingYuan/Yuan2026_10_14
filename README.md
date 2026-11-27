@@ -5,14 +5,16 @@
 Companion code for *Nearly indistinguishable: charged black holes in general
 and entangled relativity*.
 
-## Start here
+For the version distributed with the paper, download [Yuan2026_10_14.zip](https://github.com/JianqingYuan/Yuan2026_10_14/blob/55964c9a82394d44472c3e39c46ee89943c786bc/Yuan2026_10_14.zip) and follow the [original instructions](https://github.com/JianqingYuan/Yuan2026_10_14/blob/55964c9a82394d44472c3e39c46ee89943c786bc/README.md).
+
+## Current release
 
 Download the package you need from the **Assets** section of the [GitHub release](https://github.com/JianqingYuan/Yuan2026_10_14/releases) and extract it.
 
 - `Yuan2026_11_07_general_spherical_v9_4_B4.zip` contains the B4 orbital fitting code. Start with `README.md` inside the archive. The B4 fitting guide is `README_NEXTGEN.zh-CN.md` (in Chinese).
 - `periapsis-profile-0.1.1.zip` computes the uncertainty in the pericentre advance per radial period from an existing fit. It accepts a B4 fit or your own fit and can be installed independently. Its `README.md` includes a worked RN example (case 36).
 
-To reproduce the original paper figures, use the paper entry point in the B4 directory. With Python 3.12 installed,
+To redraw the paper figures with B4, use the paper entry point in the B4 directory. With Python 3.12 installed,
 open Command Prompt in the folder containing `main.py` and `requirements.txt`,
 then run:
 
